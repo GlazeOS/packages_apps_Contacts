@@ -131,6 +131,11 @@ public class GroupBrowseListFragment extends Fragment
         });
 
         mListView.setEmptyView(mEmptyView);
+
+        // dont let the fab hide things
+        View footerView = inflater.inflate(R.layout.blank_footer_view, mListView, false);
+        mListView.addFooterView(footerView, null, false);
+
         configureVerticalScrollbar();
 
         mAddAccountsView = mRootView.findViewById(R.id.add_accounts);
